@@ -1,0 +1,49 @@
+0.A 24 bit BMP file supports a maxim of ~16 million colors;(it can support a 1,2,4,8,16,24,32 bit color))
+  A GIF 256 colors;
+  A JPEG ~16 million colors
+  A PNG ~16 million colors
+
+1.GIF supports animation
+
+2.Lossy compression creates smaller files by losing some information of the original image.
+  Lossless compression doesn't lose any information about the original image.
+
+3.JPEG is a lossy compression format
+
+4.When a file is deleted the most important thing that we must know is that the file itself isn't truly deleted or erased,
+but reference to the file is freed so the computer can use the memory which first was occupied by the file.Remember that the memory is a
+Random Access Memory so the file isn't completely overwritten by only doing one action that involves memory,but to truly sanitize our hard disk we need some effective tools.
+
+5.To ensure that deleted files cannot be recovered we can :
+1.Destroy physically the drive;
+2.Degause the drive to randomize the magnetic domains;
+3.Overwrite the drive’s data so that it cannot be recovered
+
+6.<stdint.h> is a header file that declares sets of integer types having specified widths, and defines corresponding sets of macros. It also defines macros that specify limits of integer types corresponding to types defined in other standard headers.
+
+7.uint8_t, uint32_t, int32_t, and uint16_t are used in a program to specify the exact width and limits of the desired type
+
+8.BYTE as the name itself says is 1 byte,
+  DWORD is 4 bytes
+  LONG is also 4 bytes
+  WORD is 2 bytes
+
+9.The first 2 bytes of any BMP file must be the bitmap type
+
+10.bfSize is the size of the actual Bitmap(e.g. smiley is 246 bytes) while biSize is the size of the Bitmap(b) Info(i) Header that is 40 in our case.
+
+11.If biHeight is negative it means that the bitmap is a top-down DIB with the origin at the upper left corner.
+
+12.biBitCount specifies the color depth(bits per pixel) which in our case is 24.
+
+13.fopen in copy.c:37 might return a NULL pointer because there maybe isn't enough memory to create a new file.
+
+14.The third argument to fread is always 1 because it represents the number of array elements we want to read,meaning that we always want to read 1 element of the array.
+
+15.Padding is assigned with the value of 3
+
+16.fseek sets the position indicator associated with the stream to a new position,in our case it sets the position indicator associated with our input file after the padding,if there is any.
+
+17.SEEK_CUR is the current position of the file pointer
+
+18. IT'S ROB BOWDEN HOLDING A CAT!!!

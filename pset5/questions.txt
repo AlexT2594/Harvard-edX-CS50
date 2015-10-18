@@ -1,0 +1,30 @@
+0.pneumonoultramicroscopicsilicovolcanoconiosis is an English word that refers to a lung disease caused by inhaling very fine ash and sand dust.
+It is the longest word in the English language published in a dictionary, the Oxford English Dictionary.
+
+1.getrusage gets information about resource utilization,in our case it calculates the time passed between 2 instants,in the middle of whom we have done some sort of calculation(like the loading of a dictionary).
+
+2.In a variable of type struct rusage there are 16 members.
+
+3.We pass before and after by reference because the resource usages are returned in the structure pointed to by usage and so we couldn't have passed directly a struct usage but a pointer to it because this functions fills the members of the struct variable with the wanted information.
+
+4.In the main function we have the outmost for loop that gets every
+character of the text until the end of it and puts it into the variable c.
+After that we need to build an effective word to control if it is misspelled or not,
+and to do that we control that there aren't any numbers or characters different
+than letters or apostrophes with 2 if statements;we also ignore alphabetical strings too long
+to be words.If so occurs we consume the remainder of the string until another word comences.
+If we have found a word we add the '\0' character to the end of it to truly make it a word string.
+
+5.We didn't use fscanf because it also accepts numbers as strings and we didn't want that to happen.
+
+6.We declared the parameters for check and load in const because the didn't want the user to be able to modify them.
+
+7.To implement my spell-checker I used a hash table,so I defined a struct called node with a node* called next and
+a char word[26] array.
+
+8.The first time I got it correctly my code was 2.37
+
+9.At first I was adding words at the end of each node list but I modified to add each word at the beginning of the list,so my code went
+from 2.37 to ~0.37.
+
+10.I hope my code doesn't have any bottleneck.
